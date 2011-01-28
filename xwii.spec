@@ -8,7 +8,7 @@ Version:	2.9.4
 Release:	%mkrel 1
 Summary:	Nintendo Wiimote Driver
 Source:		http://pingus.seul.org/~grumbel/xwii/%{name}_%{version}_src.tar.gz
-BuildRequires:	SDL-devel zlib-devel GL-devel gcc-c++
+BuildRequires:	SDL-devel zlib-devel gcc-c++ bluez-devel wiiuse
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 
 %description
