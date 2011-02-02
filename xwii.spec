@@ -3,9 +3,8 @@ Name:		xwii
 License:	GPL
 Group:		System/Kernel and hardware
 URL:		http://pingus.seul.org/~grumbel/xwii/
-Autoreqprov:	on
 Version:	2.9.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Nintendo Wiimote Driver
 Source:		http://pingus.seul.org/~grumbel/xwii/%{name}_%{version}_src.tar.gz
 Patch0:		xwii_2.9.4-linkage.patch
