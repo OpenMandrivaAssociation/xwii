@@ -8,7 +8,11 @@ Version:	2.9.4
 Release:	%mkrel 1
 Summary:	Nintendo Wiimote Driver
 Source:		http://pingus.seul.org/~grumbel/xwii/%{name}_%{version}_src.tar.gz
-BuildRequires:	SDL-devel zlib-devel gcc-c++ bluez-devel wiiuse x11-proto-devel xcb-devel X11-devel
+Patch0:		xwii_2.9.4-linkage.patch
+BuildRequires:	libx11-devel
+BuildRequires:	libxtst-devel
+BuildRequires:	wiiuse
+BuildRequires:	wiiuse-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 
 %description
@@ -16,10 +20,12 @@ Userspace Nintendo Wiimote Driver for Linux
 
 %prep
 %setup -q -n %{name}_%{version}_src
+%patch0 -p0 -b .link
+rm -fr wiiuse_v0.12
 
 %build
 ln -s %{_libdir}/libwiiuse.so ./
-%make PREFIX=/usr
+%make PREFIX=%{_prefix}
 
 %install
 install -d %{buildroot}%{_docdir}/%{name}/
