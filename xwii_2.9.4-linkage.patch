@@ -1,0 +1,22 @@
+--- makefile.link	2010-07-17 11:53:15.000000000 +0200
++++ makefile	2011-02-02 08:11:43.000000000 +0100
+@@ -3,16 +3,16 @@
+ all: xwii
+ 
+ xwii: main.o libwiiuse.so xinterpret.o actionset.o
+-	g++ main.o xinterpret.o actionset.o -o xwii -L. -lbluetooth -ldl -lXtst -lwiiuse 
++	g++ main.o xinterpret.o actionset.o -o xwii -L. -lX11 -lXtst -lwiiuse 
+ 
+ main.o: main.cpp
+-	g++ main.cpp -c -I ./wiiuse_v0.12/src
++	g++ main.cpp -c
+ 
+ xinterpret.o: xinterpret.h xinterpret.cpp
+ 	g++ xinterpret.cpp -c
+ 
+ actionset.o: actionset.h actionset.cpp
+-	g++ actionset.cpp -c -I ./wiiuse_v0.12/src
++	g++ actionset.cpp -c 
+ 
+ clean:
+ 	@cd ./wiiuse_v0.12/ && make clean
