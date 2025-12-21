@@ -8,6 +8,7 @@ Release:	5
 Summary:	Nintendo Wiimote Driver
 Source:		http://pingus.seul.org/~grumbel/xwii/%{name}_%{version}_src.tar.gz
 Patch0:		xwii_2.9.4-linkage.patch
+BuildRequires:	make
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xtst)
 BuildRequires:	pkgconfig(xi)
